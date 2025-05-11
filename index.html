@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 Ball</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>WELCOME TO THE MAGIC 8 BALL</h1>
+        <p>Ask any YES or NO question... or type 'quit' to exit.</p>
+
+        <div class="eight-ball">🎱</div>
+
+        <form method="POST">
+            <input type="text" name="question" class="question-input" placeholder="Ask your question..." required>
+            <button type="submit" class="btn">Ask</button>
+            <button type="button" id="darkModeToggle" class="btn">Toggle Dark Mode</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if question %}
+            <p class="question-text">Your Question: "{{ question }}"</p>
+            <p class="answer-text">The Magic 8 Ball whispers: "{{ answer }}"</p>
+        {% endif %}
+    </div>
+    
+    <div class="footer">
+        <p>Powered by Flask & Magic 8 Ball</p>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('darkModeToggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
