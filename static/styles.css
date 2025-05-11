@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #400283, #0e0060);
+    color: white;
+    text-align: center;
+    transition: background 0.5s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Buttons */
+.btn {
+    background-color: white;
+    color: #41097d;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Input */
+.question-input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 60%;
+    margin-right: 10px;
+}
+
+/* Error Text */
+.error {
+    color: #ffb3b3;
+    margin-top: 15px;
+}
+
+/* 8 Ball Emoji Animation */
+.eight-ball {
+    font-size: 80px;
+    animation: shakeBall 1s infinite alternate ease-in-out;
+    margin-bottom: 20px;
+}
+
+@keyframes shakeBall {
+    0% { transform: rotate(-5deg) scale(1); }
+    100% { transform: rotate(5deg) scale(1.05); }
+}
+
+/* Typing Answer Animation */
+.answer-text {
+    font-size: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    width: 0;
+    animation: typing 2.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* Dark Mode Toggle */
+body.dark {
+    background: linear-gradient(135deg, #000000, #2c2c2c);
+    color: #e0e0e0;
+}
+
+body.dark .container {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+body.dark .btn {
+    background-color: #222;
+    color: #00ffff;
+}
+
+body.dark .btn:hover {
+    background-color: #333;
+}
